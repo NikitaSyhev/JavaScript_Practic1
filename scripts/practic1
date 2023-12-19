@@ -1,0 +1,48 @@
+
+
+function generateHeader(title, navitems, bgcolor, fontcolor) {
+
+    let nav ='';
+    if (Array.isArray(navitems)) {
+        for(let i = 0; i < navitems.length; ++i) {
+          nav +=`${navitems[i]} `;
+        }
+    }
+    else if (typeof navitems == "number") {
+        for(let i = 0; i < navitems; ++i) {
+            nav +='EMPTY ';
+          }
+    }
+
+    document.write(
+
+        `<header style="display:flex; height: 70px; justify-content: space-between; background-color: ${bgcolor};">` +
+
+        `<div style="display:flex;">` + 
+
+        `<h1 style="color:${fontcolor};">${title}</h1></div>`+
+
+        `<div style="display: flex;">` +
+
+        `<nav style="align-items:center; display:flex; color: ${fontcolor}; margin:10px; padding: 10px; font-size:30px;">${nav}</nav>`+
+        
+        `</div></header>`
+
+    );
+}
+let navArray = [
+    'menu1',
+    'menu2',
+    'menu3'
+]
+
+
+
+generateHeader('Hello, world', navArray, 'blue', 'red' );
+generateHeader('Hello, world', 3, 'blue', 'red' );
+
+
+
+
+
+
